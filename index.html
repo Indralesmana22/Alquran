@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Qurana – Teman Ibadah Digital</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="app">
+        <header class="topbar">
+            <div class="brand"><span class="logo">ق</span>
+                <div><b>Qurana</b><small>Teman Ibadah Digital</small></div>
+            </div>
+            <button id="themeBtn" class="icon-btn" aria-label="Ganti mode gelap/terang">🌙</button>
+        </header>
+
+        <main>
+            <!-- BERANDA -->
+            <section id="page-home" class="page active">
+                <div class="hero">
+                    <p id="greeting">Assalamu'alaikum</p>
+                    <h1 id="hijri">…</h1>
+                    <p id="masehi" class="muted-light"></p>
+                </div>
+
+                <div class="card verse">
+                    <h3>Ayat hari ini</h3>
+                    <p id="vArab" class="arab" dir="rtl">Memuat…</p>
+                    <p id="vId"></p>
+                    <small id="vRef" class="muted"></small>
+                </div>
+
+                <div class="card">
+                    <div class="row">
+                        <h3>Jadwal salat</h3><button id="cityBtn" class="chip">Jakarta</button>
+                    </div>
+                    <div id="prayers" class="prayers">Memuat…</div>
+                    <small id="nextPrayer" class="muted"></small>
+                </div>
+
+                <div class="card">
+                    <div class="row">
+                        <h3>Target khatam</h3>
+                        <select id="khatamSel" aria-label="Target khatam">
+                            <option value="30">30 hari</option>
+                            <option value="60">60 hari</option>
+                            <option value="90">90 hari</option>
+                        </select>
+                    </div>
+                    <div class="bar"><i id="khatamBar"></i></div>
+                    <small id="khatamTxt" class="muted"></small>
+                    <button id="continueBtn" class="btn">Lanjutkan membaca</button>
+                </div>
+
+                <div class="menu">
+                    <button data-go="quran">📖<span>Al-Qur'an</span></button>
+                    <button data-go="bookmarks">🔖<span>Bookmark</span></button>
+                    <button data-go="hafalan">🌱<span>Hafalan</span></button>
+                    <button data-go="belajar">🎓<span>Belajar</span></button>
+                </div>
+            </section>
+
+            <!-- AL-QUR'AN -->
+            <section id="page-quran" class="page">
+                <div id="listView">
+                    <input id="search" class="search" type="search" placeholder="Cari surah (nama atau nomor)">
+                    <div id="surahList"></div>
+                </div>
+                <div id="readView" hidden>
+                    <div class="reader-head">
+                        <button id="backBtn" class="chip">← Surah</button>
+                        <div><b id="rName"></b><small id="rMeta" class="muted"></small></div>
+                        <button id="repeatBtn" class="chip" title="Ulangi ayat">🔁 Off</button>
+                    </div>
+                    <div id="ayahs"></div>
+                </div>
+            </section>
+
+            <section id="page-bookmarks" class="page">
+                <h2>Bookmark</h2>
+                <div id="bmList"></div>
+            </section>
+
+            <section id="page-hafalan" class="page">
+                <div class="card soon">
+                    <h3>Hafalan</h3>
+                    <p>Segera hadir di tahap berikutnya: target harian, checklist ayat, dan catatan.</p>
+                </div>
+            </section>
+            <section id="page-belajar" class="page">
+                <div class="card soon">
+                    <h3>Belajar</h3>
+                    <p>Segera hadir di tahap berikutnya: tajwid, makharijul huruf, doa harian, dan kuis.</p>
+                </div>
+            </section>
+            <section id="page-profil" class="page">
+                <div class="card soon">
+                    <h3>Profil</h3>
+                    <p>Segera hadir di tahap berikutnya: nama, foto, riwayat, dan statistik.</p>
+                </div>
+            </section>
+        </main>
+
+        <nav class="tabs">
+            <button data-go="home" class="on">🏠<span>Beranda</span></button>
+            <button data-go="quran">📖<span>Al-Qur'an</span></button>
+            <button data-go="hafalan">🌱<span>Hafalan</span></button>
+            <button data-go="belajar">🎓<span>Belajar</span></button>
+            <button data-go="profil">👤<span>Profil</span></button>
+        </nav>
+        <div id="toast" class="toast"></div>
+    </div>
+    <script src="java.js"></script>
+</body>
+
+</html>
